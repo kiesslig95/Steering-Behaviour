@@ -93,6 +93,8 @@
           .scale(200);
         var steering = desired_velocity.subtract(seekingShip.body.velocity);
         seekingShip.setVelocity(steering.x, steering.y);
+         seekingShip.rotation = angle;
+         seekingShip.body.world.scene.physics.velocityFromRotation(angle, seekingShip.speed, seekingShip.body.velocity);
       }
     </script>
   </body>
